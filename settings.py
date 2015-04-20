@@ -94,7 +94,7 @@ MANAGERS = ADMINS
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['cooum.in', 'mobilisinmobili.net']
+ALLOWED_HOSTS = ['localhost']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -248,6 +248,7 @@ INSTALLED_APPS = (
     "mezzanine.pages",
     "mezzanine.galleries",
     "mezzanine.twitter",
+    "mezzanine_slides",
     #"mezzanine.accounts",
     #"mezzanine.mobile",
 )
@@ -332,6 +333,9 @@ OPTIONAL_APPS = (
 #     "NEVERCACHE_KEY": NEVERCACHE_KEY,
 # }
 
+FABRIC = {
+        "SECRET_KEY": '1234'
+}
 
 ##################
 # LOCAL SETTINGS #
