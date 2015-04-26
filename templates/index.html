@@ -4,54 +4,70 @@
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 <link rel="stylesheet" href="/static/css/responsiveslides.css" />
 <style>
-#map {
-		width: 100%;
-		height: 70vh;
+.site-title {
+    z-index: 3;
+    width: 100%;
+    height:50%;
+    overflow: hidden;
+}
+.site-title h1 {
+position: absolute;
+    text-align: right;
+    float: right;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 64pt;
+    background: rgba(128,128,128,0.5);
+    width: auto;
+    z-index: 3;
+    right: 0;
+}
+#body {
+    padding-top: 0px;
+}
+.content::before .content::after {
+    display: table;
+    content: " ";
+}
+.content {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(128, 128, 128, 0.8);
+    z-index: 10;
 }
 </style>
 {% endblock %}
 
 {% block extra_js %}
-<script src="/static/js/responsiveslides.js"></script>
+<script src="/static/js/responsiveslides.min.js"></script>
 {% endblock %}
-
-
 
 {% block meta_title %}{% trans "The River Cooum" %}{% endblock %}
 {% block title %}{% trans "Home" %}{% endblock %}
 
 {% block body %}
-<ul class="uslides">
-
-<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10570533_912932352057513_7903419328236405530_n.jpg" /></li>
-
-<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10541446_10152502903521141_5556674281280672539_o.jpg" /></li>
-
-<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10527494_912933835390698_7857922347345043534_n.jpg" /></li>
-
-<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10518608_10152502905726141_8698376314986910980_o.jpg" /></li>
-
-<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10506696_10152502904391141_3425689971881759375_o.jpg" /></li>
-
-<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10498202_10152502903766141_3771752374699476915_o.jpg" /></li>
-
-<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10487561_912931232057625_9053838884899933315_n.jpg" /></li>
-
-<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10431170_10152339113698598_353636863331625961_o.jpg" /></li>
-
-<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10392442_10152521496538944_6331803886944698614_n.jpg" /></li>
-
-<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10374912_10203509111345109_5307003974051783152_n.jpg" /></li>
-
-<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10340180_10152521505038944_193026809564377362_n.jpg" /></li>
-
-<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10258913_10152502904206141_4332988141124717068_o.jpg" /></li>
-
+<div class="site-title">
+<h1>The River Cooum</h1>
+<ul class="rslides">
+    <li><img src="http://cooum.in/static/media/uploads/Covers/dsc_5653_v1.jpg" /></li>
+    <li><img src="http://cooum.in/static/media/uploads/Covers/dsc_5629_v1.jpg" /></li>
+    <li><img src="http://cooum.in/static/media/uploads/Covers/cover3.jpg" /></li>
+    <li><img src="http://cooum.in/static/media/uploads/Covers/cover2.jpg" /></li>
+    <li><img src="http://cooum.in/static/media/uploads/Covers/cover1.jpg" /></li>
 </ul>
+</div>
+<div class="content">
+<div class="col-md-12">
+<h1>Welcome</h1>
 
+<p>The Cooum river though now a byword for "nauseous drain", both sustains the city of Chennai and represents a wide swathe of its history.</p>
+<p>A port, a fort, a university, palaces, graves of the common men and saints, museums, 1500 year old temples, one of the oldest scientific astronomical observatories all on its banks.</p>
+<p>Mapping it before its too late is vital.</p>
+</div>
+</div>
 <script>
     $(function() {
-        $(".rslides").responsiveslides();
+        $(".rslides").responsiveSlides({timeout: 5000, speed: 1500, pause:true, random:true});
     });
 </script>
 {% endblock %}
