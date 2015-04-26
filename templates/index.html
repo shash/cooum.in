@@ -2,7 +2,7 @@
 {% load i18n %}
 {% block extra_css %}
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-<link rel="stylesheet" href="/static/responsiveslides/responsiveslides.css" />
+<link rel="stylesheet" href="/static/css/responsiveslides.css" />
 <style>
 #map {
 		width: 100%;
@@ -12,8 +12,7 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-<script src="static/responsiveslides/responsiveslides.js"></script>
+<script src="/static/js/responsiveslides.js"></script>
 {% endblock %}
 
 
@@ -22,21 +21,37 @@
 {% block title %}{% trans "Home" %}{% endblock %}
 
 {% block body %}
+<ul class="uslides">
 
-{% block navbar %} {{ block.super }} {% endblock %}
+<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10570533_912932352057513_7903419328236405530_n.jpg" /></li>
 
-{% include "includes/standard_slides.html" %}
+<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10541446_10152502903521141_5556674281280672539_o.jpg" /></li>
 
-<div id="map"></div>
+<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10527494_912933835390698_7857922347345043534_n.jpg" /></li>
+
+<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10518608_10152502905726141_8698376314986910980_o.jpg" /></li>
+
+<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10506696_10152502904391141_3425689971881759375_o.jpg" /></li>
+
+<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10498202_10152502903766141_3771752374699476915_o.jpg" /></li>
+
+<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10487561_912931232057625_9053838884899933315_n.jpg" /></li>
+
+<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10431170_10152339113698598_353636863331625961_o.jpg" /></li>
+
+<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10392442_10152521496538944_6331803886944698614_n.jpg" /></li>
+
+<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10374912_10203509111345109_5307003974051783152_n.jpg" /></li>
+
+<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10340180_10152521505038944_193026809564377362_n.jpg" /></li>
+
+<li><img src="http://cooum.in/static/media/uploads/galleries/Snapshot%20of%20the%20Cooum/10258913_10152502904206141_4332988141124717068_o.jpg" /></li>
+
+</ul>
+
 <script>
-	var map = L.map('map', {minZoom: 1, maxZoom: 4, center: [0, 0], zoom: 1, crs: L.CRS.Simple});
-	var w = 1796, h = 2975;
-	var southWest = map.unproject([0, h], map.getMaxZoom() - 1);
-	var northEast = map.unproject([w, 0], map.getMaxZoom() - 1);
-	var bounds = new L.LatLngBounds(southWest, northEast)
-		L.imageOverlay('/static/media/uploads/gallery/txu-pclmaps-madras_1914.jpg', bounds).addTo(map);
-		map.setMaxBounds(bounds);
+    $(function() {
+        $(".rslides").responsiveslides();
+    });
 </script>
-
-
 {% endblock %}
